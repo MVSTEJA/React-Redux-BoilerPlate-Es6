@@ -1,0 +1,7 @@
+/coverage
+/node_modules
+.package.json
+.vscode
+.idea
+.history
+dist

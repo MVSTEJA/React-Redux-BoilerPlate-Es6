@@ -1,0 +1,45 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.exclude": {
+        ".git": true,
+        "bin": true
+    },
+    "search.exclude": {
+        "node_modules": true,
+        "**/bower_components": true,
+        "dist": true,
+        "coverage": true,
+        "typings": true,
+        ".vscode": true,
+        "fonts": true,
+        ".history": true,
+        "src/fonts":true,
+        ".idea": true
+    },
+    "html.suggest.angular1": false,
+    "html.suggest.ionic": false,
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx"
+    },
+    "emmet.excludeLanguages": [
+        "php"
+    ],
+    "typescript.check.tscVersion": false,
+    "window.openFilesInNewWindow": "off",
+    "files.associations": {
+        "*.js": "javascriptreact"
+    },
+    "sasslint.configFile": ".scss-lint.yml",
+    "editor.wordWrap": "on",
+    "workbench.colorTheme": "One Dark+ (Sublime)",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.cursorBlinking": "solid",
+    "window.zoomLevel": 0,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.renderWhitespace": "all",
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": true,
+    "editor.renderControlCharacters": true,
+    "http.proxyStrictSSL": false
+}
