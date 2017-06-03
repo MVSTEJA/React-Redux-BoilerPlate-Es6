@@ -10,5 +10,6 @@ export default {
   },
   currentlySending: false,
   loggedIn: auth.loggedIn(),
-  errorMessage: ''
+  errorMessage: '',
+  tweets:[]
 };

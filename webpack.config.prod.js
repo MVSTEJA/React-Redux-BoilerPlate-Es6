@@ -16,7 +16,7 @@ export default {
     debug: false, // display debug information
     noInfo: false,// webpack displays all list of files its bundling in CLI,devs use with preferably true, default is false.
     entry: {
-        main: './src/main/webapp/main'// order is critical this has to be last.
+        main: './src/main'// order is critical this has to be last.
     },
     target: 'web',// the way webpack bundles the code for web/node. web sets it for browswer specification
     output: {
@@ -66,7 +66,7 @@ export default {
             "window.jQuery": "jquery"
         }),
         new PurifyCSSPlugin({
-            paths: glob.sync(path.join(__dirname, 'src/main/webapp/index.html')),
+            paths: glob.sync(path.join(__dirname, 'src/index.html')),
             moduleExtensions: ['.html', '.js'],
             purifyOptions: {
                 min: true,
@@ -74,7 +74,7 @@ export default {
             }
         }),
         new HtmlWebpackPlugin({
-            template: 'src/main/webapp/index.html',
+            template: 'src/index.html',
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -99,7 +99,7 @@ export default {
     ],
     module: {
         loaders: [
-            { test: /\.js$/, include: path.join(__dirname, 'src/main/webapp'), loaders: ['babel'] },
+            { test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel'] },
             {
                 test: /\.woff?(\?\S*)?$/, loader: "url-loader?limit=100000&mimetype=application/font-woff", options: { name: '[path][name].[hash:8].[ext]' }
             },

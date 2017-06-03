@@ -2,25 +2,21 @@ import expect from 'expect';
 import { createStore } from 'redux';
 import rootReducer from '../reducers';
 import initialState from '../reducers/initialState';
-import * as courseActions from '../actions/courseActions';
+import * as twitterFeedActions from '../actions/twitterFeedActions';
 
-describe('Store', function() {
-  it('Should handle creating courses', function() {
+describe('Store', function () {
+  it('Should handle creating courses', function () {
     // arrange
     const store = createStore(rootReducer, initialState);
-    const course = {
-      title: "Clean Code"
-    };
+    const tweet = ['test1', 'test2'];
 
     // act
-    const action = courseActions.createCourseSuccess(course);
+    const action = twitterFeedActions.twitterFeedActionsSuccess(tweet);
     store.dispatch(action);
 
     // assert
-    const actual = store.getState().courses[0];
-    const expected = {
-      title: "Clean Code"
-    };
+    const actual = store.getState().tweet[0];
+    const expected = tweet;
 
     expect(actual).toEqual(expected);
   });

@@ -25,7 +25,7 @@
 
 import bcrypt from 'bcryptjs';
 import { SET_AUTH, CHANGE_FORM, SENDING_REQUEST, SET_ERROR_MESSAGE } from '../constants/AppConstants';
-import * as errorMessages  from '../constants/MessageConstants';
+import * as errorMessages from '../constants/MessageConstants';
 import auth from '../utils/auth';
 import genSalt from '../utils/salt';
 import { browserHistory } from 'react-router';
@@ -61,11 +61,7 @@ export function login(email, password) {
         dispatch(setAuthState(success));
         if (success === true) {
           // If the login worked, forward the user to the dashboard and clear the form
-          forwardTo('/about');
-          dispatch(changeForm({
-            email: "",
-            password: ""
-          }));
+          forwardTo('/about/profile');
         } else {
           console.log(err.type);
           switch (err.type) {
@@ -95,7 +91,11 @@ export function logout() {
       if (success === true) {
         dispatch(sendingRequest(false))
         dispatch(setAuthState(false));
-        console.log("logout")
+        // clear the form
+        dispatch(changeForm({
+          email: "",
+          password: ""
+        }));
         browserHistory.replace('/');
       } else {
         dispatch(setErrorMessage(errorMessages.GENERAL_ERROR));
@@ -134,12 +134,8 @@ export function register(email, password) {
         dispatch(sendingRequest(false));
         dispatch(setAuthState(success));
         if (success) {
-          // If the register worked, forward the user to the homepage and clear the form
-          forwardTo('/about');
-          dispatch(changeForm({
-            email: "",
-            password: ""
-          }));
+          // If the register worked, forward the user to the homepage.
+          forwardTo('/about/profile');
         } else {
           switch (err.type) {
             case 'email-exists':
@@ -214,7 +210,6 @@ function setErrorMessage(message) {
  * @param {string} location The route the user should be forwarded to
  */
 function forwardTo(location) {
-  console.log('forwardTo(' + location + ')');
   browserHistory.push(location);
 }
 

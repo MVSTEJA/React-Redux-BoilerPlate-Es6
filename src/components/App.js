@@ -2,8 +2,14 @@
 import React, { PropTypes } from 'react';
 import Nav from './common/Nav';
 import { connect } from 'react-redux';
+import { logout } from './../actions/appActions';
 
 class App extends React.Component {
+  componentWillMount() {
+    if (!Object.values(this.props.data.formState).every(x => x.length > 0) || !this.props.data.loggedIn) {
+      this.props.dispatch(logout());
+    }
+  }
   render() {
     return (
       <div>
