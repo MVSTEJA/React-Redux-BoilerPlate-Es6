@@ -26,7 +26,6 @@ class LoginForm extends Component {
     let newState = this._mergeWithCurrentState({
       email: evt.target.value
     });
-
     this._emitChange(newState);
   }
 
@@ -55,16 +54,15 @@ class LoginForm extends Component {
     this.props.onSubmit(this.props.data.email, this.props.data.password);
   }
   render() {
-    console.log(this.props);
     return (
       <form className="form" onSubmit={this._onSubmit}>
         <ErrorMessage errorMessage={this.props.errorMessage}/>
         <div className="form__field-wrapper">
-          <input className="form__field-input" id="user email" value={this.props.data.email} placeholder="Email" onChange={this._changeEmail} autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" type="email" name="email" autoComplete="off"/>
+          <input className="form__field-input" id="user email" value={this.props.data.email} placeholder="Email" onChange={this._changeEmail} autoCapitalize="off" spellCheck="false" type="email" name="email" />
           <label className="form__field-label" htmlFor="email">Email</label>
         </div>
         <div className="form__field-wrapper">
-          <input className="form__field-input" id="password" type="password" value={this.props.data.password} placeholder="••••••••••" onChange={this._changePassword} autoComplete="off"/>
+          <input className="form__field-input" id="password" type="password" value={this.props.data.password} placeholder="••••••••••" onChange={this._changePassword} autoComplete="new-password"/>
           <label className="form__field-label" htmlFor="password">Password</label>
         </div>
         <div className="form__submit-btn-wrapper">

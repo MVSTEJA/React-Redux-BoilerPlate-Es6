@@ -1,21 +1,48 @@
 $wrapper-padding: 16px;
-
 .wrapper {
-	max-width: calc($max-width + $wrapper-padding * 2);
-	margin: 0 auto;
-	display: flex;
-	height: 100%;
-	padding: 0 $wrapper-padding;
+    max-width: calc($max-width + $wrapper-padding * 2);
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    padding: 0 $wrapper-padding;
 }
 
 #app {
-	height: 100%;
+    height: 100%;
 }
 
 .text-section {
-	margin: 3em auto;
+    margin: 3em auto;
 }
 
 .admin-dashboard {
-	margin-top: 10%
+    margin-top: 10%
+}
+
+.profile-page {
+    p {
+        border: solid 1px;
+        border-radius: 20px;
+        padding: 10px;
+        background: seashell;
+    }
+}
+
+.about-page {
+    position: relative !important;
+    top: 12px !important;
+    box-shadow: none !important;
+    .nav-link {
+        background: none;
+        &.active {
+            border-bottom: solid 2px cadetblue;
+            &:hover,
+            &:focus {
+                background: none !important;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+            }
+        }
+    }
 }

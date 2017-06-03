@@ -2,10 +2,10 @@ import React from 'react';
 import {Link} from 'react-router';
 
 const HomePage = (props) => <div className="jumbotron admin-dashboard">
-  <h1>Dashboard Administration</h1>
-  <p>You Can login to application by clicking the top corner link, and entering Email Id and Password </p>
-  <p>You Can also register yourself for this application, by entering Email Id and Password </p>
-  <p>After you login to the application, You can logout too.</p>
+  <p>An Application having <i>Live Twitter Feed</i>, A game of <i>tic-tac-toe</i></p><br/>
+  <h5>You can login to application by clicking the top corner <i>login</i> link, and entering Email Id and Password </h5><br/>
+  <h5>Register yourself for this application, navigating on <i>register</i> link at top, and provide Email Id and Password for registration </h5><br/>
+  <h5>logout option is provided.</h5><br/>
 </div>;
 
 export default HomePage;

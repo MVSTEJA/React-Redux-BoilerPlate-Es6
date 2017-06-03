@@ -13,8 +13,7 @@ const openSansObserver = new FontFaceObserver('Open Sans');//eslint-disable-line
 import './styles/main.scss'; //Webpack can import CSS files too!
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/toastr/build/toastr.min.css';
-import initialState from './reducers/initialState';
-const store = configureStore(initialState);
+const store = configureStore();
 
 const routes = configRoutes(store);
 

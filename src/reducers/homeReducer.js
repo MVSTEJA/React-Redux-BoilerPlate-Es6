@@ -17,6 +17,7 @@ import initialState from './initialState';
 
 // Takes care of changing the application state
 export default function homeReducer(state = initialState, action) {
+  let copy = {}, tweetText = {};
   switch (action.type) {
     case CHANGE_FORM:
       return assign({}, state, {
@@ -34,6 +35,11 @@ export default function homeReducer(state = initialState, action) {
       return assign({}, state, {
         errorMessage: action.message
       });
+    case 'twitterFeedActionsSuccess':
+      copy = assign({}, state);
+      tweetText = assign({}, action.tweetText);
+      copy.tweets = [...copy.tweets, tweetText.tweet];
+      return copy;
     default:
       return state;
   }
